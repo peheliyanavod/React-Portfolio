@@ -1,4 +1,4 @@
-import myPhoto from "../assets/profile-pic.png";
+import myPhoto from "../assets/about-pic.png";
 
 const Profile = () => {
   const aboutMe =
