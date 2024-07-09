@@ -2,7 +2,7 @@ import Logo from '../assets/Navod logo.png'
 
 const Navbar = () => {
     const handleDownload = () => {
-        window.open('/My cv new.pdf', '_blank');
+        window.open('/cv.pdf', '_blank');
       };
   return (
     <nav className="mb-100 flex items-center justify-between py-5 bg-gray-200 ">
