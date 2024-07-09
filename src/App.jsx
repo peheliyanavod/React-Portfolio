@@ -8,7 +8,7 @@ import Projects from "./components/Projects";
 
 function App() {
   return (
-    <div className="mx-7">
+    <div>
       <Navbar/>
       <Profile />
       <Education/>

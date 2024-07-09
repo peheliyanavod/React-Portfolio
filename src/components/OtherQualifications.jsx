@@ -7,7 +7,7 @@ const OtherQualifications = () => {
     "Following a Full-stack Developer course in Cousera.",
   ];
   return (
-    <div className="border-b border-neutral-900 pb-4">
+    <div className="border-b border-neutral-900 pb-4 mx-20">
       <h2 className="my-20 text-center text-5xl">Other Qualifications</h2>
       <div>
         <div className="mb-8 flex flex-wrap lg:justify-center">

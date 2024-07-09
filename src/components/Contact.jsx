@@ -5,7 +5,7 @@ import mediumLogo from '../assets/Medium.jpg'
 
 const Contact = () => {
   return (
-    <div id="contact" className="border-b border-neutral-900 pb-20">
+    <div id="contact" className="border-b border-neutral-900 pb-20 mx-20">
       <h1 className="my-10 text-center text-4xl">Get in Touch</h1>
       <div className="text-center tracking-tighter items-center mx-auto">
         <p className="my-4">076-4447198</p>
