@@ -1,4 +1,4 @@
-import myPhoto from "../assets/about-pic.png";
+import myPhoto from "../assets/profile.jpg";
 import { motion } from "framer-motion";
 
 
@@ -13,11 +13,11 @@ const Profile = () => {
     <div className="border-b border-nuetral-900 pb-4 lg:mb-35 mx-20">
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+          <div className="flex flex-col items-center lg:items-start w-full lg:w-3/4">
             <motion.h1
               variants={container(0)}
               initial="hidden"
-              animate="visible" className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl">
+              animate="visible" className="pb-8 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl">
               Dhanuka Navod
             </motion.h1>
             <motion.span
@@ -29,14 +29,14 @@ const Profile = () => {
             <motion.p
               variants={container(0.6)}
               initial="hidden"
-              animate="visible" className="m-4 max-w-xl py-6 font-light tracking-tighter">
+              animate="visible" className="m-6 max-w-xl py-6 font-light tracking-tighter text-center">
               {aboutMe}
             </motion.p>
           </div>
         </div>
         <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center">
-          <motion.img src={myPhoto} alt="Photo of me" 
+          <div className="flex justify-center w-full lg:w-5/6">
+          <motion.img src={myPhoto} alt="Photo of me" className="rounded"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
