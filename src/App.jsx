@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import OtherQualifications from "./components/OtherQualifications";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
+import TechSkills from "./components/TechSkills";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Profile />
       <Education/>
       <Projects />
+      <TechSkills/>
       <OtherQualifications />
       <Contact/>
     </div>

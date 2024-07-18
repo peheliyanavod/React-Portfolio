@@ -9,7 +9,7 @@ const OtherQualifications = () => {
     "Following a Full-stack Developer course in Cousera.",
   ];
   return (
-    <div className="border-b border-neutral-900 pb-4 mx-20">
+    <div className="border-b border-neutral-900 pb-4 mx-20 items-center text-center">
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}

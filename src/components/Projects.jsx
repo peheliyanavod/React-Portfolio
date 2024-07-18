@@ -35,7 +35,7 @@ const Projects = () => {
     // }
   ];
   return (
-    <div id="projects" className="border-b border-neutral-900 pb-4 ">
+    <div id="projects" className="border-b border-neutral-900 pb-4 mx-2 items-center text-center md:text-center sm:text-center md:items-center">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -46,7 +46,7 @@ const Projects = () => {
       </motion.h2>
       <div>
         {myProjects.map((project, index) => (
-          <div key={index} className="mb-8 flex flex-wrap items-center lg:justify-center">
+          <div key={index} className="mb-8 flex flex-wrap items-center lg:justify-center ">
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
@@ -58,7 +58,7 @@ const Projects = () => {
                 alt=""
                 width={300}
                 height={300}
-                className="mb-6 rounded"
+                className="mb-6 rounded items-center"
               />
             </motion.div>
             <motion.div
