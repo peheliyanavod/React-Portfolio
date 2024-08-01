@@ -6,7 +6,6 @@ const OtherQualifications = () => {
     "Successfully completed Java and Python programming certification course (2021).",
     "Successfully completed a training at People’s bank (2021).",
     "Completed a Figma course in Udemy (2023).",
-    "Following a Full-stack Developer course in Cousera.",
   ];
   return (
     <div className="border-b border-neutral-900 pb-4 mx-20 items-center text-center">

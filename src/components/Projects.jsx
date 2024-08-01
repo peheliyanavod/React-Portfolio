@@ -1,21 +1,32 @@
-import bookManagementSystem from "../assets/Book Management System.png";
-import friendsApp from "../assets/Friends App.png";
-import pickmath from "../assets/PickMatch.png";
+import bookManagementSystem from "../assets/project-2.png";
+import friendsApp from "../assets/project-5.png";
+import postsnap from "../assets/project-1.png";
+import petshop from "../assets/project-3.jpg";
+import shoeStore from "../assets/project-4.png";
+import pickmath from "../assets/project-6.png";
+
 import { motion } from "framer-motion";
 
 const Projects = () => {
   const myProjects = [
     {
+      name: "PostSnap",
+      description:
+        "A social media app which can login and post images with caption with the use of Fire base.",
+      technologies: ["React", "Express", "Node Js", "MongoDB"],
+      image: postsnap,
+    },
+    {
       name: "Book Management System",
       description:
-        "A simple book management system with basic crud operations.",
+        "A book management system with basic crud operations.",
       technologies: ["React", "Express", "Node Js", "MySQL"],
       image: bookManagementSystem,
     },
     {
       name: "Friends App",
       description:
-        "Developed a simple CRUD website according to a practical exam. Consist of user login system and friends management system.",
+        "Developed a CRUD website according to a practical exam. Consist of user login system and friends management system.",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
       image: friendsApp,
     },
@@ -26,13 +37,13 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
       image: pickmath,
     },
-    // {
-    //   name: "PetShop",
-    //   description:
-    //     "Developed an E-commerce website collaboratively with my team members. It is pet’s need shop which has user management system, admin panel, shopping cart and payment system.",
-    //   technologies: ["React", "Spring boot", "PostgreSQL"],
-    //   image: bookManagementSystem,
-    // }
+    {
+      name: "PetShop",
+      description:
+        "Developed an E-commerce website collaboratively with my team members. It is pet’s need shop which has user management system, admin panel, shopping cart and payment system.",
+      technologies: ["React", "Spring boot", "PostgreSQL"],
+      image: petshop,
+    }
   ];
   return (
     <div id="projects" className="border-b border-neutral-900 pb-4 mx-2 items-center text-center md:text-center sm:text-center md:items-center">
