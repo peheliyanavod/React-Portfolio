@@ -1,14 +1,21 @@
-import bookManagementSystem from "../assets/project-2.png";
+import bookVerse from "../assets/project-2.png";
 import friendsApp from "../assets/project-5.png";
 import postsnap from "../assets/project-1.png";
 import petshop from "../assets/project-3.jpg";
-import shoeStore from "../assets/project-4.png";
+import blogMaster from "../assets/project-4.png";
 import pickmath from "../assets/project-6.png";
 
 import { motion } from "framer-motion";
 
 const Projects = () => {
   const myProjects = [
+    {
+      name: "Blog Master",
+      description:
+        "A blog posting platform with role based login, upload blogs with images, JWT authentication, User verification",
+      technologies: ["React", "Express", "Node Js", "MongoDB"],
+      image: blogMaster,
+    },
     {
       name: "PostSnap",
       description:
@@ -17,11 +24,11 @@ const Projects = () => {
       image: postsnap,
     },
     {
-      name: "Book Management System",
+      name: "Book Verse",
       description:
-        "A book management system with basic crud operations.",
+        "A book management system with basic crud operations and user login.",
       technologies: ["React", "Express", "Node Js", "MySQL"],
-      image: bookManagementSystem,
+      image: bookVerse,
     },
     {
       name: "Friends App",

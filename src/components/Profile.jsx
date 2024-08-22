@@ -6,8 +6,7 @@ const Profile = () => {
     hidden: { x: -100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: delay } },
   });
-  const aboutMe =
-    "Hello, I’m Dhanuka Navod, a 3rd year software engineering undergraduate student at University of Kelaniya. My academic journey has equipped me with a solid foundation in software development, emphasizing coursework in OOP concepts, Data structures, Databases and Web application development. Beyond the technical skills, I bring strong communication, time management and attention to details. Looking forward, I aspire to be a Full-stack Developer.";
+  const aboutMe = "Hi, I'm Peheliya Dhanuka Navod, a 3rd year undergraduate at University of Kelaniya skilled in JavaScript, React, Node.js, Express, and MongoDB. I focus on creating efficient and seamless web applications. I'm passionate about turning ideas into functional and userfriendly digital solutions. Beyond the technical skills, I bring strong communication, time management and attention to details. I am currently seeking a Software Engineering internship to enhance my first-hand experience. I have a keen interest in full-stack development and am looking to apply and grow my skills in this area."
   return (
     <div className="border-b border-nuetral-900 pb-4 lg:mb-35 mx-20">
       <div className="flex flex-wrap">
@@ -25,7 +24,7 @@ const Profile = () => {
               variants={container(0.3)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-blue-600 via-slate-800 to-purple-600 bg-clip-text text-4xl tracking-tight text-transparent"
+              className="bg-gradient-to-r from-blue-600 via-slate-800 to-purple-600 bg-clip-text text-4xl tracking-tight text-transparent p-2"
             >
               Software Engineering (UG)
             </motion.span>
@@ -33,7 +32,7 @@ const Profile = () => {
               variants={container(0.6)}
               initial="hidden"
               animate="visible"
-              className="m-6 max-w-xl py-6 font-light tracking-tighter text-center"
+              className="m-6 max-w-xl py-6 tracking-tighter text-center text-2xl font-normal"
             >
               {aboutMe}
             </motion.p>

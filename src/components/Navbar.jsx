@@ -31,7 +31,7 @@ const Navbar = () => {
         </a>
 
         <button
-          className="hover:text-gray-600 hover:font-medium"
+          className="hover:text-white hover:font-medium hover:px-2 hover:bg-slate-800 bg-slate-500 rounded p-1"
           onClick={handleDownload}
         >
           Download CV
