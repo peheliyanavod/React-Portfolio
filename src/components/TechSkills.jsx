@@ -1,214 +1,150 @@
-import { RiReactjsLine } from "react-icons/ri";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { FaJava } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { FaPython } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { FaGitAlt } from "react-icons/fa";
+import {
+  RiReactjsLine,
+  RiTailwindCssFill,
+  RiJavascriptFill,
+} from "react-icons/ri";
+import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
+import {
+  SiMongodb,
+  SiExpress,
+  SiPostman,
+  SiMysql,
+  SiXampp,
+  SiRedux,
+  SiDocker,
+  SiAmazonaws,
+  SiJsonwebtokens,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiVisualstudiocode,
+  SiNetlify,
+  SiNginx,
+} from "react-icons/si";
+import {
+  FaNodeJs,
+  FaJava,
+  FaPython,
+  FaGitAlt,
+  FaBootstrap,
+  FaPhp,
+} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import { SiPostman } from "react-icons/si";
-import { TiHtml5 } from "react-icons/ti";
-import { IoLogoCss3 } from "react-icons/io5";
-import { FaBootstrap } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaPhp } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
-import { SiXampp } from "react-icons/si";
-
+import { BiLogoPostgresql, BiLogoSpringBoot } from "react-icons/bi";
 
 const iconVariants = (duration) => ({
-    initial: {y: -10},
-    animate: {
-        y: [10,-10],
-        transition: {
-            duration: duration,
-            ease: "linear",
-            repeat: Infinity,
-            repeatType: "reverse",
-        },
+  initial: { y: -10 },
+  animate: {
+    y: [10, -10],
+    transition: {
+      duration,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "reverse",
     },
+  },
 });
+
+// 🟢 CATEGORIZED TECHNOLOGIES
+const techCategories = [
+  {
+    category: "Frontend Development",
+    technologies: [
+      { icon: <RiReactjsLine className="text-7xl text-cyan-400" />, duration: 2.5 },
+    //   { icon: <TbBrandNextjs className="text-7xl" />, duration: 3 },
+      { icon: <RiTailwindCssFill className="text-7xl text-cyan-400" />, duration: 2.5 },
+      { icon: <FaBootstrap className="text-7xl text-purple-700" />, duration: 4 },
+      { icon: <SiHtml5 className="text-7xl text-orange-400" />, duration: 2.5 },
+      { icon: <SiCss3 className="text-7xl text-blue-700" />, duration: 3 },
+      { icon: <RiJavascriptFill className="text-7xl text-yellow-400" />, duration: 3 },
+    //   { icon: <SiTypescript className="text-7xl text-blue-400" />, duration: 3 },
+    //   { icon: <SiRedux className="text-7xl text-purple-500" />, duration: 4 },
+    ],
+  },
+  {
+    category: "Backend Development",
+    technologies: [
+      { icon: <FaNodeJs className="text-7xl text-green-500" />, duration: 4 },
+      { icon: <SiExpress className="text-7xl text-gray-400" />, duration: 5 },
+      { icon: <BiLogoSpringBoot className="text-7xl text-green-700" />, duration: 5 },
+      { icon: <FaJava className="text-7xl text-red-600" />, duration: 2.5 },
+      { icon: <FaPython className="text-7xl text-sky-700" />, duration: 3 },
+      { icon: <FaPhp className="text-7xl text-blue-500" />, duration: 3 },
+    ],
+  },
+  {
+    category: "Database & Cloud",
+    technologies: [
+      { icon: <SiMongodb className="text-7xl text-green-500" />, duration: 5 },
+      { icon: <BiLogoPostgresql className="text-7xl text-sky-700" />, duration: 5 },
+      { icon: <SiMysql className="text-7xl text-blue-800" />, duration: 4 },
+      { icon: <SiAmazonaws className="text-7xl text-orange-500" />, duration: 4 },
+    //   { icon: <SiNginx className="text-7xl text-green-600" />, duration: 3 },
+    ],
+  },
+  {
+    category: "Tools & Platforms",
+    technologies: [
+      { icon: <FaGitAlt className="text-7xl text-red-400" />, duration: 4 },
+      { icon: <FaGithub className="text-7xl text-slate-200" />, duration: 6 },
+      { icon: <SiPostman className="text-7xl text-orange-400" />, duration: 3 },
+      { icon: <SiDocker className="text-7xl text-blue-500" />, duration: 4 },
+      { icon: <TbBrandVercel className="text-7xl text-white" />, duration: 3 },
+    //   { icon: <SiNetlify className="text-7xl text-green-400" />, duration: 4 },
+      { icon: <SiVisualstudiocode className="text-7xl text-blue-500" />, duration: 3 },
+      { icon: <SiXampp className="text-7xl text-orange-400" />, duration: 2.5 },
+    ],
+  },
+];
+
 
 const TechSkills = () => {
   return (
-    <div>
-        <motion.h1
+    <section className="py-20 border-b border-neutral-900 mx-10 text-center">
+      <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-20 text-center text-5xl">Technical Skills</motion.h1>
-        <div>
-        <motion.div
-      whileInView={{opacity: 1, x:0}}
-      initial={{opacity:0, x:-100}}
-      transition={{duration:1.5}}
-      className="flex flex-wrap items-center justify-center gap-4 mx-10">
-        <motion.div
-        variants={iconVariants(2.5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <RiReactjsLine className="text-7xl text-cyan-400" />
-        </motion.div>
+        transition={{ duration: 0.6 }}
+        className="text-5xl font-semibold mb-16 text-cyan-400"
+      >
+        Technical Skills
+      </motion.h1>
 
-        <motion.div
-        variants={iconVariants(3)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <TbBrandNextjs className="text-7xl" />
-        </motion.div>
+      {/* Map through each category */}
+      {techCategories.map((category, i) => (
+        <div key={i} className="mb-16">
+          <motion.h2
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-semibold text-white mb-10"
+          >
+            {category.category}
+          </motion.h2>
 
-        <motion.div
-        variants={iconVariants(5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <SiMongodb className="text-7xl text-green-500" />
-        </motion.div>
-        
-        <motion.div
-        variants={iconVariants(4)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaNodeJs className="text-7xl text-yellow-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <BiLogoPostgresql className="text-7xl text-sky-700" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(2.5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaJava className="text-7xl text-cyan-800" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(3)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaPython className="text-7xl text-sky-700" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <SiExpress className="text-7xl text-gray-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(4)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaGitAlt className="text-7xl text-red-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(6)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaGithub className="text-7xl text-black-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(3)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <SiPostman className="text-7xl text-orange-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(2.5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <TiHtml5 className="text-7xl text-orange-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <IoLogoCss3 className="text-7xl text-blue-700" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(4)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaBootstrap className="text-7xl text-purple-700" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(2.5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <RiTailwindCssFill className="text-7xl text-cyan-400" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <BiLogoSpringBoot className="text-7xl text-green-700" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(3)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <FaPhp className="text-7xl text-blue-500" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(4)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <SiMysql className="text-7xl text-blue-800" />
-        </motion.div>
-
-        <motion.div
-        variants={iconVariants(2.5)}
-        initial="initial"
-        animate="animate"
-        className="rounded-2xl border-4 border-neutral-800 p-4 m-1">
-            <SiXampp className="text-7xl text-orange-400" />
-        </motion.div>
-
-      </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="flex flex-wrap justify-center gap-5"
+          >
+            {category.technologies.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={iconVariants(item.duration)}
+                initial="initial"
+                animate="animate"
+                className="rounded-2xl border-4 border-neutral-800 p-5 hover:border-cyan-400 transition-all duration-300"
+              >
+                {item.icon}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-       
-
-
-
-
-
-    </div>
-  )
-}
+      ))}
+    </section>
+  );
+};
 
 export default TechSkills;

@@ -1,105 +1,71 @@
-import bookVerse from "../assets/project-2.png";
-import friendsApp from "../assets/project-5.png";
-import postsnap from "../assets/project-1.png";
-import petshop from "../assets/project-3.jpg";
-import blogMaster from "../assets/project-4.png";
-import pickmath from "../assets/project-6.png";
-
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+import projects from "../data/projects";
 
 const Projects = () => {
-  const myProjects = [
-    {
-      name: "Blog Master",
-      description:
-        "A blog posting platform with role based login, upload blogs with images, JWT authentication, User verification",
-      technologies: ["React", "Express", "Node Js", "MongoDB"],
-      image: blogMaster,
-    },
-    {
-      name: "PostSnap",
-      description:
-        "A social media app which can login and post images with caption with the use of Fire base.",
-      technologies: ["React", "Express", "Node Js", "MongoDB"],
-      image: postsnap,
-    },
-    {
-      name: "Book Verse",
-      description:
-        "A book management system with basic crud operations and user login.",
-      technologies: ["React", "Express", "Node Js", "MySQL"],
-      image: bookVerse,
-    },
-    {
-      name: "Friends App",
-      description:
-        "Developed a CRUD website according to a practical exam. Consist of user login system and friends management system.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
-      image: friendsApp,
-    },
-    {
-      name: "PickMatch",
-      description:
-        "E-commerce website with user login and registration, shopping cart, admin panel, dummy card payment, user review.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
-      image: pickmath,
-    },
-    {
-      name: "PetShop",
-      description:
-        "Developed an E-commerce website collaboratively with my team members. It is pet’s need shop which has user management system, admin panel, shopping cart and payment system.",
-      technologies: ["React", "Spring boot", "PostgreSQL"],
-      image: petshop,
-    }
-  ];
   return (
-    <div id="projects" className="border-b border-neutral-900 pb-4 mx-2 items-center text-center md:text-center sm:text-center md:items-center">
+    <section id="projects" className="py-20 border-b border-slate-800">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 1.5 }}
-        className="my-20 text-center text-5xl"
+        initial={{ opacity: 0, y: -60 }}
+        transition={{ duration: 0.5 }}
+        className="text-center text-4xl font-semibold mb-12"
       >
         Projects
       </motion.h2>
-      <div>
-        {myProjects.map((project, index) => (
-          <div key={index} className="mb-8 flex flex-wrap items-center lg:justify-center ">
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1 }}
-              className="w-full lg:w-1/4"
-            >
-              <img
-                src={project.image}
-                alt=""
-                width={300}
-                height={300}
-                className="mb-6 rounded items-center"
-              />
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1 }}
-              className="w-full max-w-xl lg:w-3/4"
-            >
-              <h6 className="mb-2 font-semibold">{project.name}</h6>
-              <p className="mb-4 text-neutral-600">{project.description}</p>
-              {project.technologies.map((technology, index) => (
-                <span
-                  key={index}
-                  className="mr-2 rounded bg-gray-400 px-2 py-1 text-sm font-medium text-blue-900"
-                >
-                  {technology}
-                </span>
-              ))}
-            </motion.div>
-          </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.3 }}
+            className="bg-slate-800/70 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-52 object-cover"
+            />
+
+            <div className="p-6 text-left">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-semibold text-cyan-400">
+                  {project.title}
+                </h3>
+
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                    title="View on GitHub"
+                  >
+                    <FaGithub size={22} />
+                  </a>
+                )}
+              </div>
+
+              <p className="text-slate-300 text-sm mb-3">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-slate-700 px-2 py-1 rounded-full text-cyan-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

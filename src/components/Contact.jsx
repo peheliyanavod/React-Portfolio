@@ -1,65 +1,47 @@
+import { motion } from "framer-motion";
 import linkedinLogo from "../assets/linkedin.png";
 import githubLogo from "../assets/github.png";
 import mediumLogo from "../assets/Medium.jpg";
-import { motion } from "framer-motion";
 
 const Contact = () => {
+  const socials = [
+    { href: "https://www.linkedin.com/in/peheliya-danuka/", img: linkedinLogo },
+    { href: "https://github.com/peheliyanavod", img: githubLogo },
+    { href: "https://medium.com/@hwpeheliya", img: mediumLogo },
+  ];
+
   return (
-    <div id="contact" className="border-b border-neutral-900 pb-20 mx-20">
-      <motion.h1
+    <section id="contact" className="py-20 text-center">
+      <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -60 }}
         transition={{ duration: 0.5 }}
-        className="my-10 text-center text-5xl"
+        className="text-4xl font-semibold mb-8"
       >
         Get in Touch
-      </motion.h1>
-      <div className="text-center tracking-tighter items-center mx-auto">
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="my-4"
-        >
-          076-4447198
-        </motion.p>
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-          className="my-4"
-        >
-          Jayamini, Dehigahalanda, Ambalantota
-        </motion.p>
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="my-4"
-        >
-          hwpeheliya@gmail.com
-        </motion.p>
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-          className="items-center flex flex-wrap w-1/6 text-center mx-auto"
-        >
-          <a
-            href="https://www.linkedin.com/in/peheliya-danuka/"
-            className="border-b p-1"
-          >
-            <img src={linkedinLogo} alt="" className="w-10" />
-          </a>
-          <a href="https://github.com/peheliyanavod" className="border-b p-1">
-            <img src={githubLogo} alt="" className="w-10" />
-          </a>
-          <a href="https://medium.com/@hwpeheliya" className="border-b p-1">
-            <img src={mediumLogo} alt="" className="w-12" />
-          </a>
-        </motion.div>
+      </motion.h2>
+
+      <div className="space-y-4 text-lg text-slate-300">
+        <p>📞 076-4447198</p>
+        <p>📍 Jayamini, Dehigahalanda, Ambalantota</p>
+        <p>📧 hwpeheliya@gmail.com</p>
       </div>
-    </div>
+
+      <div className="flex justify-center gap-8 mt-10">
+        {socials.map((social, index) => (
+          <motion.a
+            key={index}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            className="w-14 h-14 flex items-center justify-center bg-slate-800 rounded-full border border-slate-600 hover:border-cyan-400 transition-all"
+          >
+            <img src={social.img} alt="social" className="w-8" />
+          </motion.a>
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -1,83 +1,84 @@
 import Logo from "../assets/Navod logo.png";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Education", href: "#education" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#qualifications" },
+    { name: "Contact", href: "#contact" },
+  ];
 
-  const handleDownload = () => {
-    window.open("/cv.pdf", "_blank");
-  };
   return (
-    <nav className="mb-100 flex items-center justify-between py-5 bg-gray-200 ">
-      <div className="flex flex-shrink-0 item-center">
-        <img src={Logo} alt="logo" className="mx-10 w-40 " />
-      </div>
-      <div className="hidden lg:flex m-8 items-center justify-center gap-5 text-2xl ">
-        <a href="#home" className="hover:text-gray-600 hover:font-medium">
-          Home
-        </a>
-        <a href="#education" className="hover:text-gray-600 hover:font-medium">
-          Education
-        </a>
-        <a href="#projects" className="hover:text-gray-600 hover:font-medium">
-          Projects
-        </a>
-        <a href="#contact" className="hover:text-gray-600 hover:font-medium">
-          Contact
-        </a>
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="fixed w-full top-0 z-50 bg-slate-900/60 backdrop-blur-md border-b border-slate-800 shadow-md"
+    >
+      <div className="container mx-auto flex justify-between items-center py-3 px-6">
+        <div className="flex items-center space-x-3">
+          <img src={Logo} alt="Logo" className="w-32" />
+        </div>
+
+        <div className="hidden md:flex items-center space-x-6 text-lg">
+          {navLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.href}
+              className="text-slate-200 hover:text-cyan-400 transition-colors duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="/Dhanuka CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-cyan-500 text-slate-900 px-4 py-2 rounded-md hover:bg-cyan-400 font-medium"
+          >
+            Download CV
+          </a>
+        </div>
 
         <button
-          className="hover:text-white hover:font-medium hover:px-2 hover:bg-slate-800 bg-slate-500 rounded p-1"
-          onClick={handleDownload}
+          className="md:hidden text-cyan-400 focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          Download CV
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
         </button>
       </div>
 
-      <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-black">
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-
       {isOpen && (
-        <div className="md:hidden flex flex-col space-y-2 mt-2">
-
-          <a href="#home">
-          <button className="bg-white hover:text-gray-600 hover:font-medium w-20 py-1 rounded mr-2">
-            Home
-          </button>
-          </a>
-
-          <a href="#education">
-          <button className="bg-white hover:text-gray-600 hover:font-medium w-20 py-1 rounded">
-            Education
-          </button>
-          </a>
-
-          <a href="#projects">
-          <button className="bg-white hover:text-gray-600 hover:font-medium w-20 py-1 rounded">
-            Project
-          </button>
-          </a>
-
-          <a href="#contact">
-          <button className="bg-white hover:text-gray-600 hover:font-medium w-20 py-1 rounded">
-            Contact
-          </button>
-          </a>
-
-          
-         
+        <div className="md:hidden flex flex-col items-center py-3 space-y-2 bg-slate-900/90">
+          {navLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.href}
+              className="text-slate-200 hover:text-cyan-400 text-lg"
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -1,62 +1,55 @@
 import { motion } from "framer-motion";
 
 const Education = () => {
+  const cards = [
+    {
+      title: "BSc (Hons) in Software Engineering (UG)",
+      subtitle: "University of Kelaniya (2022 - Present)",
+      detail: "Current GPA: 3.76",
+    },
+    {
+      title: "G.C.E. Advanced Level (2020)",
+      subtitle:
+        "Chemistry (A), Combined Mathematics (B), Physics (B), English (A)",
+      detail: "Index No: 2180558",
+    },
+    {
+      title: "G.C.E. Ordinary Level (2016)",
+      subtitle:
+        "Mathematics (A), Science (A), English (A), Sinhala (A), ICT (A), Buddhism (A), History (A), Music (A), Business & Accounting (A)",
+      detail: "Index No: 61192376",
+    },
+  ];
+
   return (
-    <div id="education" className="border-b border-neutral-900 pb-4 mx-20 sm:mx-2">
-      <motion.h1
+    <section id="education" className="py-20 border-b border-slate-800">
+      <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -60 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-5xl"
+        className="text-center text-4xl font-semibold mb-12"
       >
         Education
-      </motion.h1>
-      <div className="flex flex-wrap mb-40">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="w-full lg:w-2/5 mx-auto bg-gray-300 p-10"
-        >
-          <h2 className="my-4 font-medium text-2xl text-center">
-            Bachelor of Science (Hons)
-            <br /> in Software Engineering (UG)
-          </h2>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">University of Kelaniya</p>
-          </div>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">2022 - present</p>
-          </div>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">Current GPA - 3.76</p>
-          </div>
-        </motion.div>
+      </motion.h2>
 
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-          className="w-full lg:w-2/5 mx-auto bg-gray-300 p-10"
-        >
-          <h2 className="my-4 font-medium text-2xl text-center">
-            G.C.E. A/L (2020) - 2180558
-          </h2>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">Chemistry - A</p>
-          </div>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">Combined Mathematics - B</p>
-          </div>
-          <div className="text-center">
-            <p className="my-2 max-w-xl ">Physics - B</p>
-          </div>
-          <div className=" text-center">
-            <p className="my-2 max-w-xl ">General English - A (2019)</p>
-          </div>
-        </motion.div>
+      <div className="flex flex-wrap justify-center gap-8">
+        {cards.map((edu, index) => (
+          <motion.div
+            key={index}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 60 }}
+            transition={{ duration: 0.6 }}
+            className="bg-slate-800/70 backdrop-blur-md rounded-xl p-8 w-full md:w-1/3 border border-slate-700 hover:border-cyan-400 transition-colors"
+          >
+            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+              {edu.title}
+            </h3>
+            <p className="text-slate-300">{edu.subtitle}</p>
+            <p className="text-slate-400 mt-2">{edu.detail}</p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
