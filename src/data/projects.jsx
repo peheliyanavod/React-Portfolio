@@ -6,8 +6,37 @@ import bookVerse from "../assets/bookverse.png";
 import friendsApp from "../assets/friends-app.png";
 import pickMatch from "../assets/pickmatch.png";
 import petshop from "../assets/petzone.jpg";
-
+import hrmsPro from "../assets/hrms-pro.png";
+import eventZen from "../assets/eventzen.png";
+import agenticMatrix from "../assets/agentic-matrix.png";
 const projects = [
+  {
+    id: 10,
+    title: "HRMS Pro",
+    description: "Enterprise-grade Human Resource Management System with modular architecture for employee management, attendance, payroll, and reporting workflows.",
+    technologies: ["Go", "Angular", "PostgreSQL", "Docker", "JWT", "gRPC"],
+    github: "https://github.com/Lead-HRMS-Pro",
+    liveDemo: "",
+    image: hrmsPro,
+  },
+  {
+    id: 11,
+    title: "EventZen",
+    description: "A full-stack event management system supporting event creation, scheduling, and multi-user participant registration with Google Calendar integration.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
+    github: "https://github.com/Event-Zen",
+    liveDemo: "",
+    image: eventZen,
+  },
+  {
+    id: 12,
+    title: "Agentic Matrix",
+    description: "A decision-support web application to help developers select suitable AI frameworks based on project requirements using an automated evaluation logic.",
+    technologies: ["FastAPI", "Angular", "Gemini API"],
+    github: "https://github.com/peheliyanavod/AgenticMatrix",
+    liveDemo: "",
+    image: agenticMatrix,
+  },
   {
     id: 4,
     title: "Travel Assist",
