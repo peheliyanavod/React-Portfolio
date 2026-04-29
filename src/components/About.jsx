@@ -20,19 +20,14 @@ const About = () => {
       >
         <p className="mb-4">
           Hi, I'm <span className="text-cyan-400 font-semibold">Peheliya Dhanuka Navod</span>, 
-          a passionate Software Engineering undergraduate at the University of Kelaniya, Sri Lanka. 
-          I specialize in building efficient, user-focused web applications using modern technologies.
+          a Software Engineer with experience delivering enterprise-level web applications across CRM, HRMS, and Student Management Systems used by 500+ users. I have a proven ability to improve system reliability, optimize performance, and take ownership of critical modules in production environments.
         </p>
         <p className="mb-4">
-          Currently, I’m working as a <span className="text-cyan-400 font-semibold">Trainee Software Engineer</span> 
-          at <span className="text-cyan-400 font-semibold">eArrow Pvt Ltd</span>, where I contribute to the 
-          development of enterprise-level systems including CRM, HRIS, and Higher Education Management Systems 
-          for reputed institutions like UCL, CBS, SLITHM, and HRMI. My role involves backend development, 
-          UI/UX improvements, data visualization, and collaborating in Agile sprints.
+          Currently, I’m working as an <span className="text-cyan-400 font-semibold">Associate Software Engineer</span> 
+          at <span className="text-cyan-400 font-semibold">eArrow Pvt Ltd</span>, Sri Lanka. I am skilled in full-stack development, API integration, and system optimization, with a growing focus on modern backend technologies and scalable architectures.
         </p>
         <p>
-          I’m enthusiastic about full-stack development and continuously learning frameworks like 
-          React, Node.js, and Spring Boot to enhance my technical versatility and build impactful software solutions.
+          I am passionate about contributing to large-scale software and IT-driven systems in dynamic environments.
         </p>
       </motion.div>
     </section>

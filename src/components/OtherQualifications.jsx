@@ -4,17 +4,22 @@ const qualifications = [
   {
     title: "B.Sc. (Hons) in Software Engineering",
     organization: "University of Kelaniya, Sri Lanka",
-    duration: "2021 - Present",
+    duration: "2022 - 2026",
   },
   {
-    title: "Internship in Software Engineering",
+    title: "Software Engineering Intern",
     organization: "eArrow Pvt Ltd",
     duration: "Oct 2024 - Mar 2025",
   },
   {
     title: "Trainee Software Engineer",
     organization: "eArrow Pvt Ltd",
-    duration: "Apr 2025 - Present",
+    duration: "Apr 2025 - Dec 2025",
+  },
+  {
+    title: "Associate Software Engineer",
+    organization: "eArrow Pvt Ltd",
+    duration: "Jan 2026 - Present",
   },
 ];
 

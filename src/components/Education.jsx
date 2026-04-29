@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 const Education = () => {
   const cards = [
     {
-      title: "BSc (Hons) in Software Engineering (UG)",
-      subtitle: "University of Kelaniya (2022 - Present)",
-      detail: "Current GPA: 3.76",
+      title: "BSc (Hons) in Software Engineering",
+      subtitle: "University of Kelaniya (2022 - 2026)",
+      detail: "GPA: 3.5 / 4.0 | Research Thesis: A decision support system for intelligent selection of agentic AI frameworks: A multi criteria evaluation approach",
     },
     {
       title: "G.C.E. Advanced Level (2020)",

@@ -2,14 +2,25 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    role: "Associate Software Engineer",
+    company: "eArrow Pvt Ltd, Sri Lanka",
+    duration: "Jan 2026 - Present",
+    description: [
+      "Led the revamp of the Center for Banking Studies (CBS) Student Management System, transforming a legacy, bug prone system into a stable platform with ~90% reduction in reported issues.",
+      "Designed and implemented new features and client-driven enhancements for enterprise HRMS solutions (Anura Group), ensuring alignment with real-world business requirements.",
+      "Optimized database queries and refactored backend logic, improving system performance and maintainability across multiple enterprise applications.",
+      "Delivered end-to-end features across CRM, HRMS, and SMS platforms used by 500+ active users.",
+      "Collaborated in Agile teams, contributing to sprint planning, UAT cycles, and continuous system improvements."
+    ]
+  },
+  {
     role: "Trainee Software Engineer",
     company: "eArrow Pvt Ltd, Sri Lanka",
-    duration: "April 2025 - Present",
+    duration: "April 2025 - December 2025",
     description: [
-      "Developing and maintaining scalable web applications using PHP, HTML, CSS, JavaScript, and CodeIgniter (MVC).",
-      "Enhancing core projects including CRM, HRIS, and Higher Education Management Systems (UCL, CBS, SLITHM, HRMI).",
-      "Collaborating in Agile sprints, contributing to planning, development, and UAT processes.",
-      "Participating in QA testing, code reviews, and UI/UX enhancements to ensure product quality and performance."
+      "Developed and maintained enterprise web applications using PHP, JavaScript, and MySQL within MVC architecture.",
+      "Contributed to CRM, HRMS, and Student Management Systems through feature development and bug resolution.",
+      "Assisted in API development, integrations, and data handling processes for production systems."
     ]
   },
   {
@@ -17,10 +28,8 @@ const experiences = [
     company: "eArrow Pvt Ltd, Sri Lanka",
     duration: "October 2024 - March 2025",
     description: [
-      "Assisted in developing PHP-based web solutions using the LAMP stack (Linux, Apache, MySQL, PHP).",
-      "Contributed to backend development, API integration, and data visualization.",
-      "Worked on CRM, HRIS, and Higher Education Management Systems.",
-      "Gained hands-on experience with Git, Agile, and software deployment workflows."
+      "Supported development of PHP-based applications in a LAMP environment.",
+      "Assisted in backend implementation, debugging, and testing activities across multiple systems."
     ]
   }
 ];

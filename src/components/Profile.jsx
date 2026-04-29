@@ -17,7 +17,7 @@ const Profile = () => {
             Peheliya Dhanuka Navod
           </h1>
           <h2 className="text-2xl lg:text-3xl text-slate-300 mb-6">
-            Software Engineering Undergraduate | Trainee Software Engineer
+            Software Engineer | BSc (Hons) in Software Engineering
           </h2>
           <About />
         </motion.div>
