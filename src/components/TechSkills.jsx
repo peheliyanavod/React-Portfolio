@@ -101,12 +101,12 @@ const techCategories = [
 
 const TechSkills = () => {
   return (
-    <section className="py-20 border-b border-neutral-900 mx-10 text-center">
+    <section id="skills" className="py-20 border-b border-slate-200 dark:border-neutral-900 mx-10 text-center transition-colors duration-300">
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-semibold mb-16 text-cyan-400"
+        className="text-5xl font-semibold mb-16 text-cyan-600 dark:text-cyan-400"
       >
         Technical Skills
       </motion.h1>
@@ -118,7 +118,7 @@ const TechSkills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold text-white mb-10"
+            className="text-2xl font-semibold text-slate-800 dark:text-white mb-10"
           >
             {category.category}
           </motion.h2>
@@ -135,7 +135,7 @@ const TechSkills = () => {
                 variants={iconVariants(item.duration)}
                 initial="initial"
                 animate="animate"
-                className="rounded-2xl border-4 border-neutral-800 p-5 hover:border-cyan-400 transition-all duration-300"
+                className="rounded-2xl border-4 border-slate-200 dark:border-neutral-800 bg-white dark:bg-transparent p-5 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-all duration-300"
               >
                 {item.icon}
               </motion.div>

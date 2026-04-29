@@ -5,7 +5,7 @@ import About from "./About";
 const Profile = () => {
 
   return (
-    <section className="pt-32 pb-20 border-b border-slate-800">
+    <section className="pt-32 pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -13,10 +13,10 @@ const Profile = () => {
           transition={{ duration: 0.7 }}
           className="lg:w-1/2 text-center lg:text-left"
         >
-          <h1 className="text-5xl lg:text-7xl font-bold text-cyan-400 mb-3">
+          <h1 className="text-5xl lg:text-7xl font-bold text-cyan-600 dark:text-cyan-400 mb-3">
             Peheliya Dhanuka Navod
           </h1>
-          <h2 className="text-2xl lg:text-3xl text-slate-300 mb-6">
+          <h2 className="text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-6">
             Software Engineer | BSc (Hons) in Software Engineering
           </h2>
           <About />
@@ -31,7 +31,7 @@ const Profile = () => {
           <img
             src={myPhoto}
             alt="Profile"
-            className="rounded-2xl shadow-lg shadow-cyan-900/40 w-72 lg:w-80 border border-slate-700"
+            className="rounded-2xl shadow-lg shadow-cyan-900/40 w-72 lg:w-80 border border-slate-200 dark:border-slate-700 transition-colors duration-300"
           />
         </motion.div>
       </div>

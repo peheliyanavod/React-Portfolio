@@ -36,12 +36,12 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 border-b border-slate-800">
+    <section id="experience" className="py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -60 }}
         transition={{ duration: 0.5 }}
-        className="text-center text-4xl font-semibold mb-12"
+        className="text-center text-4xl font-semibold mb-12 text-slate-800 dark:text-white"
       >
         Experience
       </motion.h2>
@@ -53,12 +53,12 @@ const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="bg-slate-800/70 p-6 rounded-xl border border-slate-700 hover:border-cyan-400"
+            className="bg-white dark:bg-slate-800/70 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
           >
-            <h3 className="text-2xl font-semibold text-cyan-400">{exp.role}</h3>
-            <p className="text-slate-400">{exp.company}</p>
+            <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400">{exp.role}</h3>
+            <p className="text-slate-600 dark:text-slate-400">{exp.company}</p>
             <p className="text-sm text-slate-500 mb-4">{exp.duration}</p>
-            <ul className="list-disc list-inside space-y-2 text-slate-300 text-sm">
+            <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300 text-sm">
               {exp.description.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}

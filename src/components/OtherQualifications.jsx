@@ -90,19 +90,19 @@ const qualifications2 = {
 
 const OtherQualifications = () => {
   return (
-    <section id="qualifications" className="py-20 border-b border-slate-800">
+    <section id="qualifications" className="py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -60 }}
         transition={{ duration: 0.5 }}
-        className="text-center text-4xl font-semibold mb-12"
+        className="text-center text-4xl font-semibold mb-12 text-slate-800 dark:text-white"
       >
         Other Qualifications
       </motion.h2>
 
       <div className="max-w-5xl mx-auto space-y-12">
         <div>
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
+          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
             Education & Experience
           </h3>
           <div className="space-y-6">
@@ -112,12 +112,12 @@ const OtherQualifications = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                className="bg-slate-800/70 p-5 rounded-xl border border-slate-700 hover:border-cyan-400"
+                className="bg-white dark:bg-slate-800/70 p-5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
               >
-                <h4 className="text-cyan-400 text-lg font-semibold">
+                <h4 className="text-cyan-600 dark:text-cyan-400 text-lg font-semibold">
                   {item.title}
                 </h4>
-                <p className="text-slate-300 text-sm">{item.organization}</p>
+                <p className="text-slate-600 dark:text-slate-300 text-sm">{item.organization}</p>
                 <p className="text-slate-500 text-xs">{item.duration}</p>
               </motion.div>
             ))}
@@ -125,7 +125,7 @@ const OtherQualifications = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
+          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
             Certifications
           </h3>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -135,12 +135,12 @@ const OtherQualifications = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-slate-800/70 p-5 rounded-xl border border-slate-700 hover:border-cyan-400"
+                className="bg-white dark:bg-slate-800/70 p-5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
               >
-                <h4 className="text-cyan-400 font-semibold text-lg">
+                <h4 className="text-cyan-600 dark:text-cyan-400 font-semibold text-lg">
                   {cert.title}
                 </h4>
-                <p className="text-slate-300 text-sm">{cert.organization}</p>
+                <p className="text-slate-600 dark:text-slate-300 text-sm">{cert.organization}</p>
                 <p className="text-slate-500 text-xs">{cert.year}</p>
               </motion.div>
             ))}
@@ -148,17 +148,17 @@ const OtherQualifications = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
+          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
             Extracurricular Activities
           </h3>
-          <ul className="list-disc list-inside space-y-3 text-slate-300 max-w-3xl mx-auto">
+          <ul className="list-disc list-inside space-y-3 text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
             {qualifications2.extracurricular.map((item, index) => (
               <motion.li
                 key={index}
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="hover:text-cyan-300 transition-colors duration-200"
+                className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors duration-200"
               >
                 {item}
               </motion.li>
