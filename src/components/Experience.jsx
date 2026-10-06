@@ -6,8 +6,9 @@ const experiences = [
     company: "eArrow Pvt Ltd, Sri Lanka",
     duration: "Jan 2026 - Present",
     description: [
-      "Led the revamp of the Center for Banking Studies (CBS) Student Management System, transforming a legacy, bug prone system into a stable platform with ~90% reduction in reported issues.",
+      "Led the revamp of the Center for Banking Studies (CBS) Student Management System, transforming a legacy, bug-prone system into a stable platform with ~90% reduction in reported issues.",
       "Designed and implemented new features and client-driven enhancements for enterprise HRMS solutions (Anura Group), ensuring alignment with real-world business requirements.",
+      "Designed and implemented the Advanced HRMS using Spring Boot and Angular, delivering features aligned with complex enterprise requirements.",
       "Optimized database queries and refactored backend logic, improving system performance and maintainability across multiple enterprise applications.",
       "Delivered end-to-end features across CRM, HRMS, and SMS platforms used by 500+ active users.",
       "Collaborated in Agile teams, contributing to sprint planning, UAT cycles, and continuous system improvements."
@@ -18,9 +19,14 @@ const experiences = [
     company: "eArrow Pvt Ltd, Sri Lanka",
     duration: "April 2025 - December 2025",
     description: [
-      "Developed and maintained enterprise web applications using PHP, JavaScript, and MySQL within MVC architecture.",
+      "Developed and maintained enterprise web applications using PHP, HTML, CSS, JavaScript, and MySQL within an MVC architecture.",
+      "Built applications utilizing the CodeIgniter framework.",
+      "Contributed to internal Customer Relationship Management (CRM) for eArrow.",
       "Contributed to CRM, HRMS, and Student Management Systems through feature development and bug resolution.",
-      "Assisted in API development, integrations, and data handling processes for production systems."
+      "Enhanced Higher Education Management Systems for Universal College Lanka (UCL), Center for Banking Studies (CBS), and Sri Lanka Institute of Tourism and Hotel Management (SLITHM).",
+      "Assisted in API development, integrations, and data handling processes for production systems.",
+      "Collaborated in Agile sprints, contributing to planning, development, and user acceptance testing (UAT).",
+      "Participated in technical discussions, QA testing, and UI/UX enhancements to ensure project quality and performance."
     ]
   },
   {
@@ -28,10 +34,22 @@ const experiences = [
     company: "eArrow Pvt Ltd, Sri Lanka",
     duration: "October 2024 - March 2025",
     description: [
-      "Supported development of PHP-based applications in a LAMP environment.",
-      "Assisted in backend implementation, debugging, and testing activities across multiple systems."
+      "Supported development of PHP-based applications in a LAMP environment (Linux, Apache, MySQL, PHP).",
+      "Assisted in backend implementation, debugging, and testing activities across multiple systems.",
+      "Contributed to backend development, API integration, and data visualization features for internal and client-based systems.",
+      "Supported multiple projects including CRM, HRIS, and Higher Education Management Systems (UCL, CBS, SLITHM).",
+      "Gained hands-on experience in version control (Git), Agile development, and collaborative software delivery processes."
     ]
-  }
+  },
+  // {
+  //   role: "Bank Trainee",
+  //   company: "People's Bank, Ambalantota, Sri Lanka",
+  //   duration: "2022 (6 Months)",
+  //   description: [
+  //     "Gained direct exposure to day-to-day banking operations, financial transaction processing, and customer relationship management.",
+  //     "Assisted with document verification, data entry, and resolving customer inquiries, developing a strong foundational understanding of financial workflows and branch operations."
+  //   ]
+  // }
 ];
 
 const Experience = () => {

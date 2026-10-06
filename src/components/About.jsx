@@ -23,7 +23,7 @@ const About = () => {
           a Software Engineer with experience delivering enterprise-level web applications across CRM, HRMS, and Student Management Systems used by 500+ users. I have a proven ability to improve system reliability, optimize performance, and take ownership of critical modules in production environments.
         </p>
         <p className="mb-4">
-          Currently, I’m working as an <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Associate Software Engineer</span> 
+          Currently, I’m working as an <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Associate Software Engineer </span> 
           at <span className="text-cyan-600 dark:text-cyan-400 font-semibold">eArrow Pvt Ltd</span>, Sri Lanka. I am skilled in full-stack development, API integration, and system optimization, with a growing focus on modern backend technologies and scalable architectures.
         </p>
         <p>

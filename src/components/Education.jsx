@@ -4,20 +4,22 @@ const Education = () => {
   const cards = [
     {
       title: "BSc (Hons) in Software Engineering",
-      subtitle: "University of Kelaniya (2022 - 2026)",
-      detail: "GPA: 3.5 / 4.0 | Research Thesis: A decision support system for intelligent selection of agentic AI frameworks: A multi criteria evaluation approach",
+      subtitle: "University of Kelaniya, Sri Lanka (2022 - 2026)",
+      detail: "GPA: 3.5 / 4.0 | Research Thesis: A decision support system for intelligent selection of agentic AI frameworks: A multi-criteria evaluation approach",
     },
     {
-      title: "G.C.E. Advanced Level (2020)",
+      title: "G.C.E. Advanced Level 2020 (Physical Science Stream)",
       subtitle:
-        "Chemistry (A), Combined Mathematics (B), Physics (B), English (A)",
-      detail: "Index No: 2180558",
+
+        "W/Rajapaksha Central College",
+      detail: "Chemistry (A), Physics (B), Combined Mathematics (B), General English (A)",
     },
     {
-      title: "G.C.E. Ordinary Level (2016)",
+      title: "G.C.E. Ordinary Level 2016 (English Medium)",
       subtitle:
-        "Mathematics (A), Science (A), English (A), Sinhala (A), ICT (A), Buddhism (A), History (A), Music (A), Business & Accounting (A)",
-      detail: "Index No: 61192376",
+
+        "H/Theraputta National School",
+      detail: "Passed with 9 'A' Grades",
     },
   ];
 

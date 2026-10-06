@@ -11,6 +11,24 @@ import eventZen from "../assets/eventzen.png";
 import agenticMatrix from "../assets/agentic-matrix.png";
 const projects = [
   {
+    id: 13,
+    title: "LMS - Advanced Learning Management System",
+    description: "Comprehensive Learning Management System featuring interactive student dashboards, administrative controls, and seamless educational workflows.",
+    technologies: ["Java", "Spring Boot", "Angular", "PostgreSQL", "JWT", "OAuth2", "Bootstrap"],
+    github: "https://github.com/LMS-Springboot",
+    liveDemo: "",
+    image: bookVerse, // reusing bookVerse image as placeholder
+  },
+  {
+    id: 14,
+    title: "Banking App - Core Banking Management System",
+    description: "A comprehensive core banking application designed to handle end-to-end banking functionalities, including customer management, account operations, and financial transactions.",
+    technologies: [".NET 8 (C#)", "Entity Framework Core", "SQL Server", "Vue.js 3", "Vite", "RESTful APIs"],
+    github: "https://github.com/peheliyanavod/Banking-Application",
+    liveDemo: "",
+    image: hrmsPro, // reusing hrmsPro image as placeholder
+  },
+  {
     id: 10,
     title: "HRMS Pro",
     description: "Enterprise-grade Human Resource Management System with modular architecture for employee management, attendance, payroll, and reporting workflows.",
@@ -71,52 +89,52 @@ const projects = [
     id: 5,
     title: "Blog Master",
     description:
-      "A blog posting platform with role based login, upload blogs with images, JWT authentication, User verification.",
+      "A blog posting platform with role-based login, uploading blogs with images, JWT authentication, and User verification.",
     technologies: ["React", "Express", "Node.js", "MongoDB"],
     github: "https://github.com/peheliyanavod/Blog-App.git",
     liveDemo: "",
     image: blogMaster,
   },
   {
+    id: 9,
+    title: "PetShop",
+    description:
+      "Developed an E-commerce website collaboratively with team members. It is a pet’s need shop which has a user management system, admin panel, shopping cart, and secure payment system.",
+    technologies: ["React", "Spring Boot", "PostgreSQL"],
+    github: "https://github.com/bhashana99/petShop.git",
+    liveDemo: "",
+    image: petshop,
+  },
+  {
     id: 6,
     title: "Book Verse",
     description:
-      "A book management system with basic CRUD operations and user login.",
+      "A book management system (CRUD app) for book records with a secure login system.",
     technologies: ["React", "Express", "Node.js", "MySQL"],
     github: "https://github.com/peheliyanavod/crud.git",
     liveDemo: "",
     image: bookVerse,
   },
   {
-    id: 7,
-    title: "Friends App",
-    description:
-      "Developed a CRUD website according to a practical exam. Consist of user login system and friends management system.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
-    github: "https://github.com/peheliyanavod/Friends-App.git",
-    liveDemo: "",
-    image: friendsApp,
-  },
-  {
     id: 8,
     title: "PickMatch",
     description:
-      "E-commerce website with user login and registration, shopping cart, admin panel, dummy card payment, user review.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "Mysql"],
+      "E-commerce website for cricket equipment with user login and registration, shopping cart, admin panel, dummy card payment, and user review.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     github: "https://github.com/peheliyanavod/PickMatch.git",
     liveDemo: "",
     image: pickMatch,
   },
   {
-    id: 9,
-    title: "PetShop",
+    id: 7,
+    title: "Friends App",
     description:
-      "Developed an E-commerce website collaboratively with my team members. It is pet’s need shop which has user management system, admin panel, shopping cart and payment system.",
-    technologies: ["React", "Spring boot", "PostgreSQL"],
-    github: "https://github.com/bhashana99/petShop.git",
+      "Developed a CRUD website according to a practical exam. Consists of a user login system and friends management system.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    github: "https://github.com/peheliyanavod/Friends-App.git",
     liveDemo: "",
-    image: petshop,
-  },
+    image: friendsApp,
+  }
 ];
 
 export default projects;

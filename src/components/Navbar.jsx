@@ -37,7 +37,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           ))}
           <a
-            href="/Dhanuka CV.pdf"
+            href="/Updated CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan-500 text-white dark:text-slate-900 px-4 py-2 rounded-md hover:bg-cyan-400 font-medium transition-colors"

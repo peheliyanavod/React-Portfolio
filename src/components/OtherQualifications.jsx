@@ -21,52 +21,37 @@ const qualifications = [
     organization: "eArrow Pvt Ltd",
     duration: "Jan 2026 - Present",
   },
+  {
+    title: "Bank Trainee",
+    organization: "People's Bank, Ambalantota, Sri Lanka",
+    duration: "2022",
+  },
 ];
 
 const qualifications2 = {
   certifications: [
     {
-      title: "AWS Educate - Introduction to Cloud 101",
+      title: "What Is Generative AI?",
+      organization: "LinkedIn Learning",
+      year: "2025",
+    },
+    {
+      title: "Introduction to Cloud 101",
       organization: "Amazon Web Services (AWS)",
       year: "2025",
     },
     {
-      title: "AWS Educate Getting Started with Compute",
+      title: "Getting Started with Compute / AWS Compute Fundamentals",
       organization: "Amazon Web Services (AWS)",
       year: "2025",
     },
     {
-      title: "AWS Educate Getting Started with Storage",
-      organization: "Amazon Web Services (AWS)",
-      year: "2025",
-    },
-    {
-      title: "AWS Educate Getting Started with Serverless",
-      organization: "Amazon Web Services (AWS)",
-      year: "2025",
-    },
-    {
-      title: "AWS Educate Getting Started with Security",
-      organization: "Amazon Web Services (AWS)",
-      year: "2025",
-    },
-    {
-      title: "AWS Educate Getting Started with Networking",
-      organization: "Amazon Web Services (AWS)",
-      year: "2025",
-    },
-    {
-      title: "AWS Educate Getting Started with Databases",
-      organization: "Amazon Web Services (AWS)",
-      year: "2025",
-    },
-    {
-      title: "Full Stack Web Development with MERN",
+      title: "MERN Stack Course",
       organization: "Udemy",
       year: "2024",
     },
     {
-      title: "Figma for Beginners: UI/UX Design Essentials",
+      title: "Figma UI/UX Course",
       organization: "Udemy",
       year: "2023",
     },
@@ -76,15 +61,15 @@ const qualifications2 = {
       year: "2021",
     },
     {
-      title: "Diploma in ICT, Institute of IT Education, Sri Lanka",
-      organization: "Institute of IT Education",
+      title: "Diploma in ICT",
+      organization: "Institute of IT Education, Sri Lanka",
       year: "2017",
     },
   ],
   extracurricular: [
-    "Participated in hackathons and university-level coding competitions(Junior Hack, PiHack).",
-    "Active member of the University of Kelaniya Software Engineering Society.",
-    "Subcommittee Member, IEEE WIE Student Branch, University of Kelaniya (2023-2024).",
+    "Subcommittee Member, IEEE WIE Student Branch - University of Kelaniya (2023–Present)",
+    "Participant - PyHack Hackathon (2023)",
+    "Participant - JuniorHack Hackathon (2022)",
   ],
 };
 
