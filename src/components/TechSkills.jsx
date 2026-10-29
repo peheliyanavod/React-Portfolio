@@ -1,149 +1,100 @@
-import { motion } from "framer-motion";
-import {
-  RiReactjsLine,
-  RiTailwindCssFill,
-  RiJavascriptFill,
-} from "react-icons/ri";
-import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
+import { RiReactjsLine, RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
+import { TbBrandVercel } from "react-icons/tb";
 import {
   SiMongodb,
   SiExpress,
   SiPostman,
   SiMysql,
   SiXampp,
-  SiRedux,
   SiDocker,
   SiAmazonaws,
-  SiJsonwebtokens,
-  SiTypescript,
   SiHtml5,
   SiCss3,
   SiVisualstudiocode,
-  SiNetlify,
-  SiNginx,
 } from "react-icons/si";
-import {
-  FaNodeJs,
-  FaJava,
-  FaPython,
-  FaGitAlt,
-  FaBootstrap,
-  FaPhp,
-} from "react-icons/fa";
+import { FaNodeJs, FaJava, FaPython, FaGitAlt, FaBootstrap, FaPhp, FaAngular } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { BiLogoPostgresql, BiLogoSpringBoot } from "react-icons/bi";
+import Section from "./ui/Section";
+import Reveal from "./ui/Reveal";
 
-const iconVariants = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-});
-
-// 🟢 CATEGORIZED TECHNOLOGIES
+// Categorised technologies. `color` is the brand colour applied to the icon.
 const techCategories = [
   {
-    category: "Frontend Development",
+    category: "Frontend",
     technologies: [
-      { icon: <RiReactjsLine className="text-7xl text-cyan-400" />, duration: 2.5 },
-    //   { icon: <TbBrandNextjs className="text-7xl" />, duration: 3 },
-      { icon: <RiTailwindCssFill className="text-7xl text-cyan-400" />, duration: 2.5 },
-      { icon: <FaBootstrap className="text-7xl text-purple-700" />, duration: 4 },
-      { icon: <SiHtml5 className="text-7xl text-orange-400" />, duration: 2.5 },
-      { icon: <SiCss3 className="text-7xl text-blue-700" />, duration: 3 },
-      { icon: <RiJavascriptFill className="text-7xl text-yellow-400" />, duration: 3 },
-    //   { icon: <SiTypescript className="text-7xl text-blue-400" />, duration: 3 },
-    //   { icon: <SiRedux className="text-7xl text-purple-500" />, duration: 4 },
+      { name: "React", icon: RiReactjsLine, color: "text-sky-500" },
+      { name: "Angular", icon: FaAngular, color: "text-red-600" },
+      { name: "JavaScript", icon: RiJavascriptFill, color: "text-yellow-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-cyan-500" },
+      { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-600" },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: SiCss3, color: "text-blue-600" },
     ],
   },
   {
-    category: "Backend Development",
+    category: "Backend",
     technologies: [
-      { icon: <FaNodeJs className="text-7xl text-green-500" />, duration: 4 },
-      { icon: <SiExpress className="text-7xl text-gray-400" />, duration: 5 },
-      { icon: <BiLogoSpringBoot className="text-7xl text-green-700" />, duration: 5 },
-      { icon: <FaJava className="text-7xl text-red-600" />, duration: 2.5 },
-      { icon: <FaPython className="text-7xl text-sky-700" />, duration: 3 },
-      { icon: <FaPhp className="text-7xl text-blue-500" />, duration: 3 },
+      { name: "Java", icon: FaJava, color: "text-red-500" },
+      { name: "Spring Boot", icon: BiLogoSpringBoot, color: "text-green-600" },
+      { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+      { name: "Express", icon: SiExpress, color: "text-zinc-700 dark:text-zinc-300" },
+      { name: "Python", icon: FaPython, color: "text-sky-600" },
+      { name: "PHP", icon: FaPhp, color: "text-indigo-500" },
     ],
   },
   {
     category: "Database & Cloud",
     technologies: [
-      { icon: <SiMongodb className="text-7xl text-green-500" />, duration: 5 },
-      { icon: <BiLogoPostgresql className="text-7xl text-sky-700" />, duration: 5 },
-      { icon: <SiMysql className="text-7xl text-blue-800" />, duration: 4 },
-      { icon: <SiAmazonaws className="text-7xl text-orange-500" />, duration: 4 },
-    //   { icon: <SiNginx className="text-7xl text-green-600" />, duration: 3 },
+      { name: "PostgreSQL", icon: BiLogoPostgresql, color: "text-sky-700 dark:text-sky-500" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-700 dark:text-blue-400" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      { name: "AWS", icon: SiAmazonaws, color: "text-orange-500" },
     ],
   },
   {
     category: "Tools & Platforms",
     technologies: [
-      { icon: <FaGitAlt className="text-7xl text-red-400" />, duration: 4 },
-      { icon: <FaGithub className="text-7xl text-slate-200" />, duration: 6 },
-      { icon: <SiPostman className="text-7xl text-orange-400" />, duration: 3 },
-      { icon: <SiDocker className="text-7xl text-blue-500" />, duration: 4 },
-      { icon: <TbBrandVercel className="text-7xl text-white" />, duration: 3 },
-    //   { icon: <SiNetlify className="text-7xl text-green-400" />, duration: 4 },
-      { icon: <SiVisualstudiocode className="text-7xl text-blue-500" />, duration: 3 },
-      { icon: <SiXampp className="text-7xl text-orange-400" />, duration: 2.5 },
+      { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
+      { name: "GitHub", icon: FaGithub, color: "text-zinc-900 dark:text-zinc-100" },
+      { name: "Docker", icon: SiDocker, color: "text-blue-500" },
+      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+      { name: "Vercel", icon: TbBrandVercel, color: "text-zinc-900 dark:text-zinc-100" },
+      { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-500" },
+      { name: "XAMPP", icon: SiXampp, color: "text-orange-500" },
     ],
   },
 ];
 
-
 const TechSkills = () => {
   return (
-    <section id="skills" className="py-20 border-b border-slate-200 dark:border-neutral-900 mx-10 text-center transition-colors duration-300">
-      <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.6 }}
-        className="text-5xl font-semibold mb-16 text-cyan-600 dark:text-cyan-400"
-      >
-        Technical Skills
-      </motion.h1>
-
-      {/* Map through each category */}
-      {techCategories.map((category, i) => (
-        <div key={i} className="mb-16">
-          <motion.h2
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold text-slate-800 dark:text-white mb-10"
-          >
-            {category.category}
-          </motion.h2>
-
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex flex-wrap justify-center gap-5"
-          >
-            {category.technologies.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={iconVariants(item.duration)}
-                initial="initial"
-                animate="animate"
-                className="rounded-2xl border-4 border-slate-200 dark:border-neutral-800 bg-white dark:bg-transparent p-5 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-all duration-300"
-              >
-                {item.icon}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      ))}
-    </section>
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="Technologies I work with"
+      description="The languages, frameworks and tools I use day-to-day to design, build and ship software."
+    >
+      <div className="grid gap-6 md:grid-cols-2">
+        {techCategories.map((category, i) => (
+          <Reveal key={category.category} delay={(i % 2) * 0.08} className="card p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              {category.category}
+            </h3>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {category.technologies.map(({ name, icon: Icon, color }) => (
+                <li
+                  key={name}
+                  className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-zinc-700"
+                >
+                  <Icon className={`text-lg ${color}`} aria-hidden="true" />
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
   );
 };
 

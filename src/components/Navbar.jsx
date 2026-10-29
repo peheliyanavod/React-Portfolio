@@ -1,97 +1,149 @@
-import Logo from "../assets/Navod logo.png";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import profile from "../data/profile";
+
+const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Education", href: "#education" },
+  { name: "Contact", href: "#contact" },
+];
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Education", href: "#education" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#qualifications" },
-    { name: "Contact", href: "#contact" },
-  ];
+  // Add a border/background once the user scrolls away from the top.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Highlight the nav link of the section currently in view.
+  useEffect(() => {
+    const sections = navLinks
+      .map((l) => document.querySelector(l.href))
+      .filter(Boolean);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const linkClass = (href) =>
+    `text-sm font-medium transition-colors ${
+      active === href
+        ? "text-zinc-900 dark:text-white"
+        : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+    }`;
+
+  const ThemeButton = ({ size = 16 }) => (
+    <button
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      className="rounded-lg p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white"
+    >
+      {theme === "dark" ? <FaSun size={size} /> : <FaMoon size={size} />}
+    </button>
+  );
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-md transition-colors duration-300"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled || isOpen
+          ? "border-b border-zinc-200 bg-white/80 backdrop-blur-lg dark:border-zinc-800 dark:bg-zinc-950/80"
+          : "border-b border-transparent"
+      }`}
     >
-      <div className="container mx-auto flex justify-between items-center py-3 px-6">
-        <div className="flex items-center space-x-3">
-          <img src={Logo} alt="Logo" className="w-32" />
-        </div>
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <a
+          href="#home"
+          className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white"
+        >
+          {profile.shortName}
+          <span className="text-primary-600 dark:text-primary-400">.</span>
+        </a>
 
-        <div className="hidden md:flex items-center space-x-6 text-lg">
-          {navLinks.map((link, i) => (
-            <a
-              key={i}
-              href={link.href}
-              className="text-slate-600 dark:text-slate-200 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
-            >
+        <div className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className={linkClass(link.href)}>
               {link.name}
             </a>
           ))}
+        </div>
+
+        <div className="hidden items-center gap-2 md:flex">
+          <ThemeButton />
           <a
-            href="/Updated CV.pdf"
+            href={profile.cv}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-cyan-500 text-white dark:text-slate-900 px-4 py-2 rounded-md hover:bg-cyan-400 font-medium transition-colors"
+            className="btn-primary px-4 py-2"
           >
-            Download CV
+            Resume
           </a>
-          <button
-            onClick={toggleTheme}
-            className="text-slate-600 dark:text-slate-300 hover:text-cyan-500 dark:hover:text-cyan-400 focus:outline-none transition-colors"
-          >
-            {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </button>
         </div>
 
-        <button
-          className="md:hidden text-cyan-500 dark:text-cyan-400 focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-center py-3 space-y-2 bg-slate-100/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800">
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeButton />
           <button
-            onClick={toggleTheme}
-            className="mb-2 text-slate-600 dark:text-slate-300 hover:text-cyan-500 dark:hover:text-cyan-400 focus:outline-none transition-colors"
+            className="rounded-lg p-2 text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+            onClick={() => setIsOpen((o) => !o)}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
-            {theme === "dark" ? <FaSun size={24} /> : <FaMoon size={24} />}
+            {isOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
           </button>
-          {navLinks.map((link, i) => (
-            <a
-              key={i}
-              href={link.href}
-              className="text-slate-600 dark:text-slate-200 hover:text-cyan-500 dark:hover:text-cyan-400 text-lg transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
         </div>
-      )}
-    </motion.nav>
+      </nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden md:hidden"
+          >
+            <div className="mx-auto flex max-w-6xl flex-col gap-1 px-6 pb-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-lg px-3 py-2 text-base font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a
+                href={profile.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-3"
+              >
+                Download Resume
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

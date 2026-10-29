@@ -1,32 +1,9 @@
-import { motion } from "framer-motion";
+import { FaCertificate, FaUsers } from "react-icons/fa";
+import Section from "./ui/Section";
+import Reveal from "./ui/Reveal";
 
-const qualifications = [
-  {
-    title: "B.Sc. (Hons) in Software Engineering",
-    organization: "University of Kelaniya, Sri Lanka",
-    duration: "2022 - 2026",
-  },
-  {
-    title: "Software Engineering Intern",
-    organization: "eArrow Pvt Ltd",
-    duration: "Oct 2024 - Mar 2025",
-  },
-  {
-    title: "Trainee Software Engineer",
-    organization: "eArrow Pvt Ltd",
-    duration: "Apr 2025 - Dec 2025",
-  },
-  {
-    title: "Associate Software Engineer",
-    organization: "eArrow Pvt Ltd",
-    duration: "Jan 2026 - Present",
-  },
-  {
-    title: "Bank Trainee",
-    organization: "People's Bank, Ambalantota, Sri Lanka",
-    duration: "2022",
-  },
-];
+// NOTE: The previous "Education & Experience" list was removed from this section
+// because it duplicated the dedicated Education and Experience sections.
 
 const qualifications2 = {
   certifications: [
@@ -75,83 +52,40 @@ const qualifications2 = {
 
 const OtherQualifications = () => {
   return (
-    <section id="qualifications" className="py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -60 }}
-        transition={{ duration: 0.5 }}
-        className="text-center text-4xl font-semibold mb-12 text-slate-800 dark:text-white"
-      >
-        Other Qualifications
-      </motion.h2>
-
-      <div className="max-w-5xl mx-auto space-y-12">
-        <div>
-          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
-            Education & Experience
+    <Section id="qualifications" eyebrow="Certifications" title="Continuous learning">
+      <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+        <Reveal className="card p-6">
+          <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            <FaCertificate className="text-primary-500" /> Certifications
           </h3>
-          <div className="space-y-6">
-            {qualifications.map((item, index) => (
-              <motion.div
-                key={index}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 40 }}
-                transition={{ duration: 0.4, delay: index * 0.15 }}
-                className="bg-white dark:bg-slate-800/70 p-5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
-              >
-                <h4 className="text-cyan-600 dark:text-cyan-400 text-lg font-semibold">
-                  {item.title}
-                </h4>
-                <p className="text-slate-600 dark:text-slate-300 text-sm">{item.organization}</p>
-                <p className="text-slate-500 text-xs">{item.duration}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
-            Certifications
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {qualifications2.certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 40 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white dark:bg-slate-800/70 p-5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
-              >
-                <h4 className="text-cyan-600 dark:text-cyan-400 font-semibold text-lg">
-                  {cert.title}
-                </h4>
-                <p className="text-slate-600 dark:text-slate-300 text-sm">{cert.organization}</p>
-                <p className="text-slate-500 text-xs">{cert.year}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-6 text-center">
-            Extracurricular Activities
-          </h3>
-          <ul className="list-disc list-inside space-y-3 text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
-            {qualifications2.extracurricular.map((item, index) => (
-              <motion.li
-                key={index}
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors duration-200"
-              >
-                {item}
-              </motion.li>
+          <ul className="mt-4 divide-y divide-zinc-200 dark:divide-zinc-800">
+            {qualifications2.certifications.map((cert) => (
+              <li key={cert.title} className="flex items-start justify-between gap-4 py-3">
+                <div>
+                  <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{cert.title}</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{cert.organization}</p>
+                </div>
+                <span className="chip flex-none">{cert.year}</span>
+              </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
+
+        <Reveal delay={0.08} className="card h-fit p-6">
+          <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            <FaUsers className="text-primary-500" /> Activities
+          </h3>
+          <ul className="mt-4 space-y-3">
+            {qualifications2.extracurricular.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
-    </section>
+    </Section>
   );
 };
 

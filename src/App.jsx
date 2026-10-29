@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
+import About from "./components/About";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import TechSkills from "./components/TechSkills";
@@ -9,6 +10,7 @@ import OtherQualifications from "./components/OtherQualifications";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -29,32 +31,54 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:text-white min-h-screen font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
       <Router>
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <main className="px-4 sm:px-8 lg:px-20">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <section id="home">
-                    <Profile />
-                  </section>
-                  <Education />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar theme={theme} toggleTheme={toggleTheme} />
+                <main className="mx-auto max-w-6xl px-6">
+                  <Profile />
+                  <About />
                   <Experience />
                   <Projects />
                   <TechSkills />
+                  <Education />
                   <OtherQualifications />
                   <Contact />
-                </>
-              }
-            />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </main>
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <>
+                <Navbar theme={theme} toggleTheme={toggleTheme} />
+                <main className="mx-auto max-w-6xl px-6 pt-16">
+                  <Projects showAllByDefault />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Navbar theme={theme} toggleTheme={toggleTheme} />
+                <main className="mx-auto max-w-6xl px-6 pt-16">
+                  <Contact />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
       </Router>
     </div>
   );

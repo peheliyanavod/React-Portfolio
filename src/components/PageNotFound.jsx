@@ -1,46 +1,45 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const PageNotFound = () => {
   return (
-    <section className="flex flex-col items-center justify-center h-screen text-center text-slate-300 bg-gradient-to-br from-slate-900 to-slate-800">
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
+    <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <motion.p
+        initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-9xl font-bold text-cyan-400"
+        transition={{ duration: 0.5 }}
+        className="text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400"
       >
-        404
-      </motion.h1>
+        404 error
+      </motion.p>
 
-      <motion.h2
+      <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="text-3xl mt-4 mb-6"
+        transition={{ delay: 0.1, duration: 0.5 }}
+        className="mt-3 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
       >
-        Oops! Page Not Found
-      </motion.h2>
+        Page not found
+      </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="text-lg mb-10"
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="mt-4 max-w-md text-zinc-600 dark:text-zinc-400"
       >
         The page you’re looking for doesn’t exist or has been moved.
       </motion.p>
 
       <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ duration: 0.2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-8"
       >
-        <Link
-          to="/"
-          className="bg-cyan-500 text-white px-6 py-3 rounded-xl hover:bg-cyan-600 transition-colors duration-300"
-        >
-          Go Back Home
+        <Link to="/" className="btn-primary">
+          <FaArrowLeft size={12} /> Go back home
         </Link>
       </motion.div>
     </section>

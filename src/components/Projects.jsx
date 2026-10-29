@@ -1,71 +1,85 @@
-import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaChevronDown } from "react-icons/fa";
 import projects from "../data/projects";
+import Section from "./ui/Section";
+import Reveal from "./ui/Reveal";
+import ProjectCard from "./ProjectCard";
 
-const Projects = () => {
+const FEATURED_COUNT = 4;
+
+const Projects = ({ showAllByDefault = false }) => {
+  const [showAll, setShowAll] = useState(showAllByDefault);
+
+  // Projects flagged `featured: true` in data/projects.jsx are shown first (max 4).
+  const featured = projects.filter((p) => p.featured).slice(0, FEATURED_COUNT);
+  const others = projects.filter((p) => !featured.includes(p));
+
+  const toggle = () => {
+    if (showAll) {
+      // Bring the user back to the top of the section when collapsing.
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }
+    setShowAll((s) => !s);
+  };
+
   return (
-    <section id="projects" className="py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -60 }}
-        transition={{ duration: 0.5 }}
-        className="text-center text-4xl font-semibold mb-12 text-slate-800 dark:text-white"
+    <>
+      <Section
+        id="projects"
+        eyebrow="Projects"
+        title="Selected work"
+        description="A few projects I'm most proud of — spanning enterprise systems, fintech and AI-assisted decision support."
       >
-        Projects
-      </motion.h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {featured.map((project, i) => (
+            <Reveal key={project.id} delay={(i % 2) * 0.08}>
+              <ProjectCard project={project} featured />
+            </Reveal>
+          ))}
+        </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-slate-800/70 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm dark:shadow-none transition-colors duration-300"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-52 object-cover"
-            />
-
-            <div className="p-6 text-left">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-semibold text-cyan-600 dark:text-cyan-400">
-                  {project.title}
-                </h3>
-
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-                    title="View on GitHub"
-                  >
-                    <FaGithub size={22} />
-                  </a>
-                )}
-              </div>
-
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-3">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-transparent transition-colors"
-                  >
-                    {tech}
-                  </span>
+        <AnimatePresence initial={false}>
+          {showAll && (
+            <motion.div
+              id="more-projects"
+              key="more-projects"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <h3 className="mb-6 mt-16 text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                More projects
+              </h3>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {others.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {others.length > 0 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={toggle}
+              aria-expanded={showAll}
+              aria-controls="more-projects"
+              className="btn-secondary"
+            >
+              {showAll ? "Show less" : `Show more projects (${others.length})`}
+              <FaChevronDown
+                size={12}
+                className={`transition-transform duration-300 ${showAll ? "rotate-180" : ""}`}
+              />
+            </button>
+          </div>
+        )}
+      </Section>
+    </>
   );
 };
 

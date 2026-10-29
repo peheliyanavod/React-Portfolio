@@ -9,9 +9,12 @@ import petshop from "../assets/petzone.jpg";
 import hrmsPro from "../assets/hrms-pro.png";
 import eventZen from "../assets/eventzen.png";
 import agenticMatrix from "../assets/agentic-matrix.png";
+// Set `featured: true` on up to 4 projects to show them first on the homepage.
+// The remaining projects are revealed with the "Show more projects" button.
 const projects = [
   {
     id: 13,
+    featured: true,
     title: "LMS - Advanced Learning Management System",
     description: "Comprehensive Learning Management System featuring interactive student dashboards, administrative controls, and seamless educational workflows.",
     technologies: ["Java", "Spring Boot", "Angular", "PostgreSQL", "JWT", "OAuth2", "Bootstrap"],
@@ -21,6 +24,7 @@ const projects = [
   },
   {
     id: 14,
+    featured: true,
     title: "Banking App - Core Banking Management System",
     description: "A comprehensive core banking application designed to handle end-to-end banking functionalities, including customer management, account operations, and financial transactions.",
     technologies: [".NET 8 (C#)", "Entity Framework Core", "SQL Server", "Vue.js 3", "Vite", "RESTful APIs"],
@@ -30,6 +34,7 @@ const projects = [
   },
   {
     id: 10,
+    featured: true,
     title: "HRMS Pro",
     description: "Enterprise-grade Human Resource Management System with modular architecture for employee management, attendance, payroll, and reporting workflows.",
     technologies: ["Go", "Angular", "PostgreSQL", "Docker", "JWT", "gRPC"],
@@ -48,6 +53,7 @@ const projects = [
   },
   {
     id: 12,
+    featured: true,
     title: "Agentic Matrix",
     description: "A decision-support web application to help developers select suitable AI frameworks based on project requirements using an automated evaluation logic.",
     technologies: ["FastAPI", "Angular", "Gemini API"],
