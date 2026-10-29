@@ -29,7 +29,7 @@ const Projects = ({ showAllByDefault = false }) => {
         id="projects"
         eyebrow="Projects"
         title="Selected work"
-        description="A few projects I'm most proud of — spanning enterprise systems, fintech and AI-assisted decision support."
+        description="A few projects I'm most proud of spanning enterprise systems, fintech and AI-assisted decision support."
       >
         <div className="grid gap-6 md:grid-cols-2">
           {featured.map((project, i) => (

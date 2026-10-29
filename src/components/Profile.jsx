@@ -51,8 +51,8 @@ const Profile = () => {
             className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400"
           >
             I design and ship full-stack features across CRM, HRMS and Student
-            Management platforms using Spring Boot, Angular, React and Node.js —
-            with a focus on stability, performance and clean architecture.
+            Management platforms using Spring Boot, Angular, React and Node.js with a 
+            focus on stability, performance and clean architecture.
           </motion.p>
 
           <motion.div {...fadeUp(0.2)} className="mt-8 flex flex-wrap items-center gap-3">

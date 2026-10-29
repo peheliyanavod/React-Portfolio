@@ -1,0 +1,46 @@
+Portfolio TODO: what to do next
+
+🔴 High priority (content: what recruiters notice first)
+ Add live demos (liveDemo in src/data/projects.jsx). No project has one yet. Deploy at least the 4 featured projects (Vercel, Render or Railway). If that isn't possible, add a short Loom or GIF walkthrough.
+ Fix the GitHub links. https://github.com/LMS-Springboot, https://github.com/Lead-HRMS-Pro and https://github.com/Event-Zen look like org or user URLs, not repos. Check every link. If a repo is private, say so ("Private: enterprise project") instead of linking to a 404.
+ Turn project descriptions into impact statements. Use problem → what you built → result, for example "Reduced X by Y%" or "Supports N users". The experience section already does this well; the projects don't.
+ Clean up the repos. Each featured repo needs a good README (screenshots, architecture, setup steps, tech stack), a pinned position on your GitHub profile and a clear commit history.
+ Decide what personal info to show. The contact section now shows only "Ambalantota, Sri Lanka" instead of your full home address. Consider whether a public phone number is wanted, or whether email and LinkedIn are enough.
+ Update public/Updated CV.pdf so it matches the site. Rename it to something like Peheliya-Navod-CV.pdf, since spaces in URLs look unprofessional.
+
+🟠 Medium priority (credibility and depth)
+ Add project case-study pages (/projects/:slug) with the problem, your role, architecture diagram, challenges, screenshots and outcomes. This is the biggest step up from a "card grid" portfolio.
+ Add a "Writing" section that pulls your latest Medium posts (Medium RSS → JSON). Technical writing makes you stand out.
+ Add testimonials or recommendations from a lead, manager or lecturer (LinkedIn recommendations work well).
+ Link certifications to their credential URLs (AWS, LinkedIn Learning, Udemy). Consider dropping older or low-signal ones, such as the 2017 Diploma or the Figma course, to keep the list sharp.
+ Publish the research thesis (Agentic Matrix) as a paper, PDF or summary and link it from the Education and Projects sections.
+ Add a contact form (Formspree, EmailJS or Web3Forms) next to the mailto button.
+ Show Go, .NET, Vue and FastAPI in Skills if you want them recognised. Your projects use them but the skills section doesn't list them.
+
+🟡 Technical, performance and SEO
+ Compress images. agentic-matrix.png (650 KB), eventzen.png (607 KB) and hrms-pro.png (541 KB) are heavy. Convert them to WebP/AVIF at about 1200px wide (aim for under 150 KB each).
+ Code-split routes and framer-motion with React.lazy, since the JS bundle is about 356 KB (120 KB gzipped). Better still, use LazyMotion from framer-motion.
+ Add a favicon and social preview. The site still uses /vite.svg. Add a proper favicon, apple-touch-icon, og:image (1200×630) and Twitter card meta tags in index.html.
+ Add structured data (JSON-LD Person schema) for better Google results, and update public/sitemap.xml with lastmod.
+ Fix the multi-page routes. Navbar hash links (#about, …) don't work from /projects or /contact. Either remove those routes or change the links to /#about and handle scrolling. Also add a vercel.json rewrite so deep links don't 404 on refresh.
+ Respect the system theme. Default to prefers-color-scheme instead of always dark on first visit, and avoid the flash of the wrong theme with a small inline script in index.html.
+ Respect prefers-reduced-motion with framer-motion's MotionConfig reducedMotion="user".
+ Add analytics (Vercel Analytics or Plausible) to see which projects people actually open.
+ Use a custom domain (for example navod.dev) instead of react-portfolio-gray-chi.vercel.app.
+ Run Lighthouse and aim for 95+ in Performance, Accessibility, Best Practices and SEO.
+
+🟢 Code quality and maintenance
+ Move all content into src/data/. profile.js and projects.jsx are already there; experience, education, skills and certifications should follow. Then content edits never touch component code.
+ Rename package.json "name": "my-project" to something meaningful.
+ Remove unused assets and files: linkedin.png, github.png and Medium.jpg (replaced by icons), and Navod logo.png (replaced by a text wordmark that works in dark mode).
+ Migrate to TypeScript (optional) for typed data models (Project, Experience).
+ Add Prettier, a lint step in CI (GitHub Actions) and update the outdated browserslist DB (npx update-browserslist-db@latest).
+ Add a few tests (Vitest + React Testing Library), for example that the projects toggle shows 4 projects and then all of them.
+ Upgrade dependencies when convenient: Vite 5 → latest, React 18 → 19, Tailwind 3 → 4, ESLint 8 → 9 flat config.
+
+💡 Nice-to-have
+ A filter by tech on the expanded project list (React / Spring / .NET …).
+ A command palette (⌘K) or keyboard navigation.
+ A "Now" or "Currently learning" block.
+ A GitHub contribution graph or pinned repos pulled from the GitHub API.
+ Internationalisation (Sinhala/English), if relevant to your audience.

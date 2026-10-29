@@ -62,7 +62,7 @@ const Experience = () => {
       id="experience"
       eyebrow="Experience"
       title="Where I've worked"
-      description="Two years of growth at eArrow — from intern to Associate Software Engineer — shipping production features for enterprise clients."
+      description="Two years of growth at eArrow from intern to Associate Software Engineer shipping production features for enterprise clients."
     >
       <ol className="relative ml-2 border-l border-zinc-200 dark:border-zinc-800">
         {experiences.map((exp, index) => (

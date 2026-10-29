@@ -6,11 +6,10 @@ import bookVerse from "../assets/bookverse.png";
 import friendsApp from "../assets/friends-app.png";
 import pickMatch from "../assets/pickmatch.png";
 import petshop from "../assets/petzone.jpg";
-import hrmsPro from "../assets/hrms-pro.png";
-import eventZen from "../assets/eventzen.png";
-import agenticMatrix from "../assets/agentic-matrix.png";
-// Set `featured: true` on up to 4 projects to show them first on the homepage.
-// The remaining projects are revealed with the "Show more projects" button.
+import lms from "../assets/LMS.png";
+import eventzen from "../assets/eventzen.png";
+
+
 const projects = [
   {
     id: 13,
@@ -20,47 +19,48 @@ const projects = [
     technologies: ["Java", "Spring Boot", "Angular", "PostgreSQL", "JWT", "OAuth2", "Bootstrap"],
     github: "https://github.com/LMS-Springboot",
     liveDemo: "",
-    image: bookVerse, // reusing bookVerse image as placeholder
+    image: lms,
   },
-  {
-    id: 14,
-    featured: true,
-    title: "Banking App - Core Banking Management System",
-    description: "A comprehensive core banking application designed to handle end-to-end banking functionalities, including customer management, account operations, and financial transactions.",
-    technologies: [".NET 8 (C#)", "Entity Framework Core", "SQL Server", "Vue.js 3", "Vite", "RESTful APIs"],
-    github: "https://github.com/peheliyanavod/Banking-Application",
-    liveDemo: "",
-    image: hrmsPro, // reusing hrmsPro image as placeholder
-  },
-  {
-    id: 10,
-    featured: true,
-    title: "HRMS Pro",
-    description: "Enterprise-grade Human Resource Management System with modular architecture for employee management, attendance, payroll, and reporting workflows.",
-    technologies: ["Go", "Angular", "PostgreSQL", "Docker", "JWT", "gRPC"],
-    github: "https://github.com/Lead-HRMS-Pro",
-    liveDemo: "",
-    image: hrmsPro,
-  },
+  // {
+  //   id: 14,
+  //   featured: true,
+  //   title: "Banking App - Core Banking Management System",
+  //   description: "A comprehensive core banking application designed to handle end-to-end banking functionalities, including customer management, account operations, and financial transactions.",
+  //   technologies: [".NET 8 (C#)", "Entity Framework Core", "SQL Server", "Vue.js 3", "Vite", "RESTful APIs"],
+  //   github: "https://github.com/peheliyanavod/Banking-Application",
+  //   liveDemo: "",
+  //   // image: ,
+  // },
+  // {
+  //   id: 10,
+  //   featured: true,
+  //   title: "HRMS Pro",
+  //   description: "Enterprise-grade Human Resource Management System with modular architecture for employee management, attendance, payroll, and reporting workflows.",
+  //   technologies: ["Go", "Angular", "PostgreSQL", "Docker", "JWT", "gRPC"],
+  //   github: "https://github.com/Lead-HRMS-Pro",
+  //   liveDemo: "",
+  //   // image: hrmsPro,
+  // },
   {
     id: 11,
+    featured: true,
     title: "EventZen",
     description: "A full-stack event management system supporting event creation, scheduling, and multi-user participant registration with Google Calendar integration.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
     github: "https://github.com/Event-Zen",
     liveDemo: "",
-    image: eventZen,
+    image: eventzen,
   },
-  {
-    id: 12,
-    featured: true,
-    title: "Agentic Matrix",
-    description: "A decision-support web application to help developers select suitable AI frameworks based on project requirements using an automated evaluation logic.",
-    technologies: ["FastAPI", "Angular", "Gemini API"],
-    github: "https://github.com/peheliyanavod/AgenticMatrix",
-    liveDemo: "",
-    image: agenticMatrix,
-  },
+  // {
+  //   id: 12,
+  //   featured: true,
+  //   title: "Agentic Matrix",
+  //   description: "A decision-support web application to help developers select suitable AI frameworks based on project requirements using an automated evaluation logic.",
+  //   technologies: ["FastAPI", "Angular", "Gemini API"],
+  //   github: "https://github.com/peheliyanavod/AgenticMatrix",
+  //   liveDemo: "",
+  //   // image: agenticMatrix,
+  // },
   {
     id: 4,
     title: "Travel Assist",
@@ -74,6 +74,7 @@ const projects = [
   {
     id: 1,
     title: "Engine-Clinic",
+    featured: true,
     description:
       "A vehicle repair and online reservation system built using the MERN stack and Auth0 authentication. It allows users to book vehicle services and manage reservations efficiently.",
     technologies: ["MongoDB", "Express.js", "React", "Node.js", "Auth0"],
@@ -94,6 +95,7 @@ const projects = [
   {
     id: 5,
     title: "Blog Master",
+    featured: true,
     description:
       "A blog posting platform with role-based login, uploading blogs with images, JWT authentication, and User verification.",
     technologies: ["React", "Express", "Node.js", "MongoDB"],
